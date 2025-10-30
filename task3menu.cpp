@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-// -------------------- MaxHeap --------------------
 class MaxHeap {
 private:
     int* arr;
