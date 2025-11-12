@@ -50,30 +50,40 @@ int  matrix_fibonacci(int n) {
 // Normal Recursion
 int recusive_fibonacci(int n) {
     if (n <= 1) return n;
-    return normal_fib(n - 1) + normal_fib(n - 2);
+    return recusive_fibonacci(n - 1) + recusive_fibonacci(n - 2);
 }
 int main() {
-    int n;
-	cout << "Enter a positive integer: ";
-    cin >> n;
-	cout << 'Choose Fibonacci method:\n';
-	cout << "1. Normal Recursion\n";
-	cout << "2. Dynamic Programming (Bottom-Up)\n";
-	cout << "3. Matrix Multiplication\n";
-	int choice;
-	cin >> choice;
-    switch (choice) {
-        case 1:
-            cout << "Fibonacci of " << n << " is " << recusive_fibonacci(n) << endl;
+    while (true) {
+        cout << "Fibonacci Calculator\n";
+        cout << "Choose Fibonacci method:\n";
+        cout << "1. Normal Recursion\n";
+        cout << "2. Dynamic Programming (Bottom-Up)\n";
+        cout << "3. Matrix Multiplication\n";
+        cout << "4. Exit\n";
+        int choice;
+        cin >> choice;
+
+        if (choice == 4) {
             break;
-        case 2:
-            cout << "Fibonacci of " << n << " is " << fibonacci_bottomUp(n) << endl;
+        }
+
+        cout << "Enter a positive integer: ";
+        int n;
+        cin >> n;
+
+        switch (choice) {
+            case 1:
+                cout << "Fibonacci of " << n << " is " << recusive_fibonacci(n) << endl;
             break;
-        case 3:
-            cout << "Fibonacci of " << n << " is " << matrix_fibonacci(n) << endl;
+            case 2:
+                cout << "Fibonacci of " << n << " is " << fibonacci_bottomUp(n) << endl;
             break;
-        default:
-            cout << "Invalid choice!" << endl;
+            case 3:
+                cout << "Fibonacci of " << n << " is " << matrix_fibonacci(n) << endl;
+            break;
+            default:
+                cout << "Invalid choice!" << endl;
+        }
     }
 	return 0;
 }

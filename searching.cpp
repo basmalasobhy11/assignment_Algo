@@ -3,7 +3,6 @@
 #include <vector>
 using namespace std;
 
-/// Recursive Binary Search
 int recBinarySearch(vector<int> arr, int left, int right, int target) {
     if (left <= right) {
         int mid = left + (right - left) / 2;
@@ -21,7 +20,6 @@ int recBinarySearch(vector<int> arr, int left, int right, int target) {
     return -1;
 }
 
-/// Iterative Binary Search
 int binarySearch(vector<int> arr, int target) {
     int low = 0; int high = arr.size();
 

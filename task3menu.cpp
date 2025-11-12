@@ -178,7 +178,6 @@ void heapSort(int arr[], int n) {
     }
 }
 
-
 int main() {
     int mainChoice;
     do {
